@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX | 03</title>
+    <style>
+        body{
+    background-color: cornflowerblue;
+    font: normal 16px arial;
+    text-align: center;
+}
+
+header{
+    background-color: gold;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.box{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.658);
+    color: white;
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 50%;
+}
+
+button{ 
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: slateblue;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: steelblue;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EXERCÍCIO #03</h1>
+    </header>
+    <div class="box">
+        <p>Leia as idades de duas crianças. Após, calcular e mostrar a soma das idade e média</p>
+        <input type="number" id="n1" placeholder="Digite um valor A"> 
+        <br><br>
+        <input type="number" id="n2" placeholder="Digite um valor B"> 
+        <br><br>
+        <button onclick="somamedia()">Enviar</button>
+    </div>
+
+    <script>
+        function somamedia() {
+        var chield1 = Number(document.getElementById('n1').value)
+        var chield2 = Number(document.getElementById('n2').value)
+        var soma = chield1 + chield2
+        var media = soma / 2 
+        alert(`A idade é ${soma} e a media é ${media}`)
+        }
+    </script>
+</body>
+</html>
