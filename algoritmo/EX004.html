@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX | 04</title>
+    <style>
+        body{
+    background-color: cornflowerblue;
+    font: normal 16px arial;
+    text-align: center;
+}
+
+header{
+    background-color: gold;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.box{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.658);
+    color: white;
+}
+
+.num{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    width: 50%;
+}
+
+button{ 
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: slateblue;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: steelblue;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EXERCÍCIO #04</h1>
+    </header>
+    <div class="box">
+        <p>Leia dois números. Efetue 4 operações matemáticas e mostre os resultados</p>
+        <input type="number" class="num" id="n1" placeholder="Digite um valor A"> 
+        <br><br>
+        
+        <input type="number" class="num" id="n2" placeholder="Digite um valor B"> 
+        <br><br>
+
+        <input type="radio" name="operation" id="adicao" value="adicao" checked>
+        <label for="adicao">Adição</label>
+        <br><br>
+
+        <input type="radio" name="operation" id="subtracao" value="subtracao">
+        <label for="subtracao">Subtração</label>
+        <br><br>
+
+        <input type="radio" name="operation" id="multiplicacao" value="multiplicacao">
+        <label for="multiplicacao">Multiplicação</label>
+        <br><br>
+
+        <input type="radio" name="operation" id="divisao" value="divisao">
+        <label for="divisao">Divisão</label>
+        <br><br>
+        
+        <button onclick="calcular()">Enviar</button>
+    </div>
+
+    <script>
+        function calcular() {
+            var n1 = Number(document.getElementById('n1').value )
+            var n2 = Number(document.getElementById('n2').value)
+            var selectOperation = document.querySelector('input[name="operation"]:checked').value
+            var nameOperation,calculo
+            if (selectOperation == 'adicao') {
+                nameOperation = 'Adição'
+                calculo = n1 + n2
+                alert(`O resultado da adição é ${calculo}`)
+            }
+            if (selectOperation == 'subtracao') {
+                nameOperation = 'Subtração'
+                calculo = n1 - n2
+                alert(`O resultado da subtração é ${calculo}`)
+            }
+            if (selectOperation == 'multiplicacao') {
+                nameOperation = 'Multiplicação'
+                calculo = n1 * n2
+                alert(`O resultado da multiplicação é ${calculo}`)
+            }
+            if (selectOperation == 'divisao') {
+                nameOperation = 'Divisão'
+                calculo = n1 / n2
+                alert(`O resultado da divisão é ${calculo}`)
+            }
+        }
+    </script>
+</body>
+</html>
